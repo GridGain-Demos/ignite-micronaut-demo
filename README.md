@@ -30,7 +30,10 @@ Create the World database schema that is shipped with every Ignite release and l
     ./sqlline.sh --verbose=true -u jdbc:ignite:thin://127.0.0.1/
     ```
 
-4. Load the World database using SQLLine: `!run ../examples/sql/world.sql`
+4. Load the World database using SQLLine: 
+    ```bash
+    !run ../examples/sql/world.sql
+    ```bash
 
 5. Disconnect from the container by closing the SQLLine connection (`!q`) and the bash session (`exit`)
 
