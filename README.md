@@ -1,8 +1,8 @@
 # Demo: Getting Started With Apache Ignite and Micronaut
 
 The demo shows how to create a simple Micronaut-powered application that processes HTTP requests and queries data from
-an Ignite cluster using SQL APIs. The application uses a lightweight Ignite thin client connection to communicate with the cluster
-and fully deployed in Docker. 
+an Ignite cluster using SQL APIs. The app is deployed in Docker and uses a lightweight Ignite thin client connection
+to communicate with the cluster.
 
 ## Start Ignite Cluster and Load Sample Database
 
@@ -36,7 +36,7 @@ Create the World database schema that is shipped with every Ignite release and l
 
 ## Start Micronaut Application
 
-Similarly to the cluster, the application will be deployed in Docker with a single port open for HTTP requests processing.
+Similarly to the cluster, you deploy the application in Docker with a single port open for HTTP requests processing.
 
 Create the application's Docker image:
 
@@ -45,7 +45,7 @@ Create the application's Docker image:
     mvn clean package
     ```
 
-2. Produce a Docker image name `ignite-micronaut-app`:
+2. Produce a Docker image named `ignite-micronaut-app`:
     ```bash
     docker build -t ignite-micronaut-app .
     ```
@@ -62,20 +62,20 @@ Start the application passing an IP address of one of the Ignite server nodes:
     docker run -p 8080:8080 --env igniteServerAddress=<YOUR_IP_ADDRESS>:10800 --name ignite-micronaut-app --network cluster_ignite_net ignite-micronaut-app
     ```
 
-The application will connect to the cluster using `<YOUR_IP_ADDRESS>:10800` endpoint and will be ready to process your
+The application will connect to the cluster using the `<YOUR_IP_ADDRESS>:10800` endpoint and will be ready to process your
 HTTP requests on port `8080`.
 
 ## Request Most Populated Cities
 
 With the application running, you can request a list of the most populated cities by opening the URL below in a browser or
-by connecting to it with `curl`:
+with `curl`:
 ```bash
 curl http://localhost:8080/cities?population=8000000
 ```
 
-The previous request returns all the cities with the population equal or bigger than 8 million. Micronaut intercepts this
+The previous request returns all the cities with the population equal to or bigger than 8 million. Micronaut intercepts this
 request and queries the Ignite cluster to prepare the response. Note, you can change
-the value of the `population` parameter to get cities with different population.
+the value of the `population` parameter to get cities with a different population.
 
 ## Terminate Demo
 
