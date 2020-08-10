@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  ignite_server_node:
+    image: apacheignite/ignite:2.8.1
+    environment:
+      - IGNITE_WORK_DIR=/opt/ignite/work
+    networks:
+      - ignite_net
+    volumes:
+      - ../work:/opt/ignite/work
+
+networks:
+  ignite_net:
+    driver: bridge
