@@ -33,7 +33,7 @@ Create the World database schema that is shipped with every Ignite release and l
 4. Load the World database using SQLLine: 
     ```bash
     !run ../examples/sql/world.sql
-    ```bash
+    ```
 
 5. Disconnect from the container by closing the SQLLine connection (`!q`) and the bash session (`exit`)
 
