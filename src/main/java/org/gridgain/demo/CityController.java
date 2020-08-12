@@ -31,7 +31,6 @@ public class CityController {
     @Inject
     IgniteClientConnection client;
 
-
     @Get
     @Produces(MediaType.TEXT_JSON)
     public List<City> listCities(int population) {
