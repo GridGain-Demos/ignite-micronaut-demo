@@ -30,7 +30,11 @@ public class IgniteClientConnection {
 
     @PostConstruct
     public void init() {
-        ClientConfiguration cfg = new ClientConfiguration().setAddresses(Application.IGNITE_SERVER_ADDRESS);
+        ClientConfiguration cfg = new ClientConfiguration();
+
+        cfg.setAddresses(Application.IGNITE_SERVER_ADDRESS);
+        cfg.setPartitionAwarenessEnabled(true);
+
         client = Ignition.startClient(cfg);
     }
 
