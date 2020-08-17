@@ -1,8 +1,10 @@
 # Demo: Getting Started With Apache Ignite and Micronaut
 
-The demo shows how to create a simple Micronaut-powered application that processes HTTP requests and queries data from
+The demo shows how to create a simple Micronaut microservice that processes HTTP requests and queries data from
 an Ignite cluster using SQL APIs. The app is deployed in Docker and uses a lightweight Ignite thin client connection
 to communicate with the cluster.
+
+If you'd like to build the microservice from the ground up, learning about all the nuances, then complete the [Building Microservices With Micronaut and Apache Ignite](https://www.gridgain.com/docs/tutorials/micronaut/getting-started/ignite-micronaut-getting-started) tutorial.
 
 ## Start Ignite Cluster and Load Sample Database
 
